@@ -15,6 +15,7 @@
             background-color: #1E1E2E;
             color: white;
             text-align: center; 
+            font-size: 18px;
         }
 
         header {
@@ -26,7 +27,21 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             position: relative;
         }
+        
 
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                background-color: lightblue;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+                background-color: lightcoral;
+            }
+        }
         .logo {
             display: flex;
             align-items: center;
@@ -81,18 +96,18 @@
 
         .about-content {
             background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             transition:  0.3s ease-in-out;
+            text-align: right;
             direction: rtl;
-            text-align: right;  
+            list-style-type: none;
         }
         .about-content:hover {
             transform: scale(1.04);
             background: rgba(255, 215, 0, 0.2);
         }
-
 
         .service-section {
             margin-bottom: 30px;
@@ -369,13 +384,26 @@
 
           
         });
-    </script>
+    
+            let clickCount = 0; // متغير لحفظ عدد مرات النقر
+    
+            function toggleMessage() {
+                if (clickCount === 0) {
+                    alert("قريبًا إن شاء الله!"); // أول مرة
+                } else {
+                    alert("صلي علي النبي والله لسه مش شغال!"); // المرات التالية
+                }
+                clickCount++; // زيادة العداد بعد كل نقر
+            }
+        </script>
+    </head>
+    
     
 </head>
 <body>
     <header>
         <div class="language-switch">
-            <button id="langToggle">AR</button>
+        <button onclick ="toggleMessage('قريباً ان شاء الله')">AR</button> 
         </div>
         <nav>
             <ul>
@@ -396,9 +424,9 @@
     <section id="about" class="active">
         <div class="container">
             <h2>  نبذة عني</h2>
-            <div class="about-content">
-                <p>مصمم ومطور محتوى تعليمي تفاعلي أسعى إلى التطوير والتميز في مجال التعليم الإلكتروني لإنشاء مواد تعليمية أكثر تفاعلية وذات جودة عالية تسهل عملية التعلم على المتعلم وتكون مثيرة للاهتمام بالنسبة له وبعيدة عن التلقين الذي يصيب المتعلم بالملل</p>
-            </div>
+            <li class="about-content">
+                <p>مصمم ومطور محتوى تعليمي تفاعلي أسعى إلى التطوير والتميز في مجال التعليم الإلكتروني لإنشاء مواد تعليمية أكثر تفاعلية وذات جودة عالية تسهل عملية التعلم على المتعلم وتكون مثيرة للاهتمام بالنسبة له وبعيدة عن التلقين الذي يصيب المتعلم بالملل
+            </li>
         </div>
     </section>
 
@@ -687,6 +715,6 @@
             </div>
             
     </section>
-    
+
 </body>
 </html>
